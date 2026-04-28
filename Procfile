@@ -1,1 +1,1 @@
-web: gunicorn studyplanner.wsgi
+web: gunicorn plan.wsgi
