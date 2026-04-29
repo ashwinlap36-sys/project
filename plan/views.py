@@ -29,16 +29,16 @@ def add_task(request):
                 user=request.user   # ✅ link task to user
             )
 
-    return redirect('/')
+    return redirect('home')
 
 
-
+@login_required
 def complete_task(request, id):
     task = Task.objects.get(id=id)
     task.completed = True
     task.save()
 
-    return redirect('/')
+    return redirect('home')
 
 def signup_view(request):
     if request.method == 'POST':
